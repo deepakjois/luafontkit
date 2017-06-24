@@ -12,7 +12,7 @@ function Offset.decode(stream, parent)
   -- In short format, offsets are multiplied by 2.
   -- This doesn't seem to be documented by Apple, but it
   -- is implemented this way in Freetype.
-  if parent.flags then return stream.readUInt32BE() else return stream.readUInt16BE() * 2 end
+  if parent.flags then return stream:readUInt32BE() else return stream:readUInt16BE() * 2 end
 end
 
 local gvar = r.Struct.new({
